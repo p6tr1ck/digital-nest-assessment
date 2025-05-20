@@ -1,0 +1,23 @@
+.navbar {
+  background-color: rgb(255, 255, 255);
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+#title {
+  color: rgb(11, 134, 200);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar button {
+  background: none;
+  cursor: pointer;
+  border: none;
+}
