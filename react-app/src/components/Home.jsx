@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./Home.css";
 
 export default function Home() {
   const [product, setProduct] = useState([]);
@@ -16,27 +17,30 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <ul style={{ listStyle: "none" }}>
-        {product.map((data) => {
-          return (
-            <li key={data.id}>
-              <div>
-                <img src={data.image} alt="" />
+    <div className="main">
+      <div style={{ fontWeight: "bold" }}>Our Products</div>
+      <div className="product-container">
+        <ul className="product-list">
+          {product.map((data) => {
+            return (
+              <li key={data.id}>
                 <div>
-                  <div>{data.name}</div>
+                  <img src={data.image} alt="" />
                   <div>
-                    $
-                    {data.price.toString().length > 2
-                      ? data.price
-                      : data.price.toString() + ".00"}
+                    <div>{data.name}</div>
+                    <div>
+                      $
+                      {data.price.toString().length > 2
+                        ? data.price
+                        : data.price.toString() + ".00"}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }

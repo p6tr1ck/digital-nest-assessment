@@ -1,2 +1,16 @@
+.main {
+  width: 100%;
+  background-color: gray;
+}
+
+.product-list {
+  display: flex;
+  list-style: none;
+}
+
 @media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    background-color: yellow;
+  }
 }
