@@ -8,7 +8,12 @@ import { ItemContext } from "../App";
 export default function ProductDescription() {
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [itemsInShoppingCart, setItemsInShoppingCart] = useContext(ItemContext);
+  const {
+    itemsInShoppingCart,
+    setItemsInShoppingCart,
+    itemCount,
+    setItemCount,
+  } = useContext(ItemContext);
   const { id } = useParams();
   const navigate = useNavigate();
   const getProduct = async () => {
@@ -29,6 +34,8 @@ export default function ProductDescription() {
       ...itemsInShoppingCart,
       product,
     ]);
+    setItemCount(itemCount + 1);
+    console.log(itemsInShoppingCart);
   }
 
   useEffect(() => {
