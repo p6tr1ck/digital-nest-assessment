@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function ProductList() {
+export default function ProductList(props) {
   const [product, setProduct] = useState([]);
   const navigate = useNavigate();
 

@@ -1,29 +1,42 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import "./Home.css";
-import ProductList from "./ProductList";
 import NavBar from "./Navbar";
+import ProductDisplay from "./ProductDisplay";
+import Category from "./Category";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
-      <NavBar />
-      <div className="main">
-        <div className="header-container">
-          <div
-            style={{
-              fontWeight: "bold",
-              paddingTop: "1rem",
-              fontSize: "1.2rem",
-            }}
-          >
-            Our Products
+      <div className="page-container">
+        <NavBar />
+        <div className="main">
+          <div className="home-container">
+            {props.itemClicked ? null : (
+              <div className="header-container">
+                <div
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                  }}
+                >
+                  Our Products
+                </div>
+                <Category />
+              </div>
+            )}
+            {props.itemClicked ? (
+              <ProductDisplay itemClicked={props.itemClicked} />
+            ) : (
+              <div className="product-container">
+                <ul className="product-list">
+                  <ProductDisplay itemClicked={props.itemClicked} />
+                </ul>
+              </div>
+            )}
           </div>
-        </div>
-        <div className="product-container">
-          <ul className="product-list">
-            <ProductList />
-          </ul>
         </div>
       </div>
     </>

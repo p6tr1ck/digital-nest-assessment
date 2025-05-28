@@ -23,6 +23,7 @@ export default function Category() {
           label="All Categories"
           onChange={(event) => handleChange(event)}
         >
+          <MenuItem value="all">All Categories</MenuItem>
           <MenuItem value="apparel">Apparel</MenuItem>
           <MenuItem value="accessories">Accessories</MenuItem>
           <MenuItem value="electornics">Electronics</MenuItem>
