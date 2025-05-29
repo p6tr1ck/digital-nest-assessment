@@ -35,12 +35,11 @@ export default function ProductDescription() {
       product,
     ]);
     setItemCount(itemCount + 1);
-    console.log(itemsInShoppingCart);
   }
 
   useEffect(() => {
     getProduct();
-  }, []);
+  }, [itemsInShoppingCart]);
 
   if (isLoading) return <div>Loading...</div>;
   return (
