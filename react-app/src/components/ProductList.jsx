@@ -26,9 +26,20 @@ export default function ProductList(props) {
     <>
       {product.map((data, index) => {
         return (
-          <li key={index} onClick={() => handleClick(data.id)}>
+          <li
+            style={{ borderRadius: "1rem" }}
+            key={index}
+            onClick={() => handleClick(data.id)}
+          >
             <div>
-              <img src={data.image} alt="" />
+              <img
+                style={{
+                  borderTopLeftRadius: "1rem",
+                  borderTopRightRadius: "1rem",
+                }}
+                src={data.image}
+                alt=""
+              />
               <div className="description">
                 <div className="item-name">{data.name}</div>
                 <div className="item-price">
