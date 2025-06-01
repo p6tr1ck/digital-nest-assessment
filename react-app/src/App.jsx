@@ -7,7 +7,7 @@ import { createContext } from "react";
 export const ItemContext = createContext();
 
 function App() {
-  const [itemsInShoppingCart, setItemsInShoppingCart] = useState([]);
+  const [itemsInShoppingCart, setItemsInShoppingCart] = useState(new Map());
   const [itemCount, setItemCount] = useState(0);
   return (
     <>
