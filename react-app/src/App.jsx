@@ -7,6 +7,7 @@ import { createContext } from "react";
 export const ItemContext = createContext();
 
 function App() {
+  const [product, setProduct] = useState([]);
   const [itemsInShoppingCart, setItemsInShoppingCart] = useState(new Map());
   const [itemCount, setItemCount] = useState(0);
   return (
@@ -18,6 +19,8 @@ function App() {
             setItemsInShoppingCart,
             itemCount,
             setItemCount,
+            product,
+            setProduct,
           }}
         >
           <Routes>
