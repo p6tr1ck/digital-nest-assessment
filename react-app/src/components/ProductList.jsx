@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ItemContext } from "../App";
 
 export default function ProductList(props) {
-  const [product, setProduct] = useState([]);
+  const { product, setProduct } = useContext(ItemContext);
   const navigate = useNavigate();
 
   function handleClick(id) {

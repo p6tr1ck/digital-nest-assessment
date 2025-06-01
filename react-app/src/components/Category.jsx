@@ -9,6 +9,7 @@ export default function Category() {
   const [product, setProduct] = React.useState("");
 
   const handleChange = (event) => {
+    console.log(product);
     setProduct(event.target.value);
   };
 
@@ -23,10 +24,10 @@ export default function Category() {
           label="All Categories"
           onChange={(event) => handleChange(event)}
         >
-          <MenuItem value="all">All Categories</MenuItem>
-          <MenuItem value="apparel">Apparel</MenuItem>
-          <MenuItem value="accessories">Accessories</MenuItem>
-          <MenuItem value="electornics">Electronics</MenuItem>
+          <MenuItem value="All">All Categories</MenuItem>
+          <MenuItem value="Apparel">Apparel</MenuItem>
+          <MenuItem value="Accessories">Accessories</MenuItem>
+          <MenuItem value="Electornics">Electronics</MenuItem>
         </Select>
       </FormControl>
     </Box>
