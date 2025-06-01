@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-import axios from "axios";
 import "./Home.css";
 import NavBar from "./Navbar";
 import ProductDisplay from "./ProductDisplay";
